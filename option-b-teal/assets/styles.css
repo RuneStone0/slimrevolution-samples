@@ -454,6 +454,7 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
 .btn--danger:hover { background: #8f2d1d; color: #fff; border-color: #8f2d1d; }
 /* .link was gold-dark on white (~3.5:1). Keep the accent as the underline, move the
    text to ink so it passes AA for body-size text. */
+.portal-main .lead { color: var(--ink); opacity: .8; }   /* --muted on the sand band is 3.79:1 in the teal theme; ink@80% passes AA in both */
 .portal-main .link { color: var(--ink); border-bottom: 2px solid var(--gold); }
 .portal-main .link:hover { border-bottom-color: var(--ink); }
 .portal-main .btn:focus-visible, .portal-main .link:focus-visible, .portal-main a:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
