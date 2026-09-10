@@ -1,5 +1,14 @@
 # Slim Revolution — website sample designs
 
+## ▶ Live previews (click these)
+
+- **Both designs, side by side:** https://runestone0.github.io/slimrevolution-samples/
+- **Option A — clean & light:** https://runestone0.github.io/slimrevolution-samples/option-a-light/
+- **Option B — keeps the teal:** https://runestone0.github.io/slimrevolution-samples/option-b-teal/
+
+> ⚠️ **Use the links above, not the file view on this GitHub page.** GitHub displays `.html` files as
+> source code, so nothing renders here — the working websites are only on the preview URLs above.
+
 Two rough-draft directions for a facelift of **slimrevolution.net**, prepared by BrilliantR for
 Travis Kamper. Shared as live, clickable previews (not finished designs).
 
