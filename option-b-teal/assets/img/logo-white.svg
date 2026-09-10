@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="xMidYMid meet" data-bbox="412.835 264.61 614.329 910.779" xmlns="http://www.w3.org/2000/svg" viewBox="412.835 264.61 614.329 910.779" width="614.329" height="910.779" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <defs>
+            <clipPath id="ae470596-4502-40ba-80ee-5133a51fb062_comp-mckv42r93" clipPathUnits="userSpaceOnUse">
+                <path d="M-667.507 198.457h1080v-1080h-1080Z"></path>
+            </clipPath>
+            <clipPath id="98501501-0edf-4b87-979e-14d456a4fc7f_comp-mckv42r93" clipPathUnits="userSpaceOnUse">
+                <path d="M-380.452 325.366h1080v-1080h-1080Z"></path>
+            </clipPath>
+            <clipPath id="4edd400d-92da-4cc3-a6ec-519ee3404367_comp-mckv42r93" clipPathUnits="userSpaceOnUse">
+                <path d="M-569.73 610.114h1080v-1080h-1080Z"></path>
+            </clipPath>
+        </defs>
+        <path clip-path="url(#ae470596-4502-40ba-80ee-5133a51fb062_comp-mckv42r93)" transform="matrix(1.33333 0 0 -1.33333 890.01 264.61)" d="M0 0c-176.305-50.472-260.2-172.814-169.883-326.83 30.414-51.864 57.572-103.649 54.939-156.621-3.724-74.898-53.481-126.416-121.198-169.269-15.886-10.053-32.983-19.134-47.378-30.366 81.247 24.764 146.312 62.517 182.73 122.04 37.908 61.957 30.853 130.942-11.391 204.323-30.87 53.624-59.567 106.827-56.336 161.38 3.793 64.053 42.072 111.54 97.606 150.981C-48.645-28.549-23.717-14.728 0 0" fill="#ffffff" data-color="1"></path>
+        <path clip-path="url(#98501501-0edf-4b87-979e-14d456a4fc7f_comp-mckv42r93)" transform="matrix(1.33333 0 0 -1.33333 507.269 433.822)" d="M0 0c-.167 24.088 15.582 43.726 35.174 43.861 19.593.136 35.612-19.282 35.778-43.37.167-24.088-15.581-43.726-35.174-43.861C16.185-43.506.167-24.088 0 0" fill="#ffffff" data-color="1"></path>
+        <path clip-path="url(#4edd400d-92da-4cc3-a6ec-519ee3404367_comp-mckv42r93)" transform="matrix(1.33333 0 0 -1.33333 759.64 813.485)" d="M0 0c-126.148-42.723-241.727-38.043-258.154 10.44-11.338 33.493 27.613 79.145 94.384 118.247-47.727-32.887-73.806-68.812-64.522-96.231 15.433-45.587 122.808-50.43 239.813-10.808 111.482 37.751 191.492 102.241 185.45 147.687a36 36 0 0 0 1.718-4.193C215.117 116.659 126.159 42.723 0 0" fill="#ffffff" data-color="2"></path>
+    </g>
+</svg>
