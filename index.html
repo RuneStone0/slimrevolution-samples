@@ -62,7 +62,8 @@
   .member-link .go{margin-left:auto;color:var(--accent-dark);font-weight:700;font-size:14px;white-space:nowrap}
 
   details.allpages{border-top:1px solid var(--line);padding-top:12px}
-  details.allpages summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--accent-dark);padding:6px 0}
+  details.allpages summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);padding:6px 0;border-bottom:1px solid transparent}
+  details.allpages summary:hover{border-bottom-color:var(--accent)}
   details.allpages summary::-webkit-details-marker{display:none}
   details.allpages summary::before{content:"▸ ";font-size:12px}
   details.allpages[open] summary::before{content:"▾ "}
