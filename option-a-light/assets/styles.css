@@ -442,6 +442,20 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
 .p-chart .line { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .p-chart .dot { fill: var(--gold); }
 .p-chart text { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
+/* --- buttons on LIGHT surfaces -------------------------------------------------
+   The base .btn--ghost is styled for dark bands: cream text (--ivory-text) on a
+   transparent background. Used on a white card that renders as near-invisible
+   (cream-on-white ~1.1:1), so the portal uses these variants instead. */
+.btn--sm { min-height: 42px; padding: 10px 18px; font-size: 14.5px; }
+.btn--outline { background: var(--white); color: var(--ink); border: 1.5px solid rgba(20, 16, 12, .55); }
+.btn--outline:hover { background: var(--ink); color: var(--ivory-text); border-color: var(--ink); }
+.btn--danger { background: var(--white); color: #8f2d1d; border: 1.5px solid #8f2d1d; }
+.btn--danger:hover { background: #8f2d1d; color: #fff; border-color: #8f2d1d; }
+/* .link was gold-dark on white (~3.5:1). Keep the accent as the underline, move the
+   text to ink so it passes AA for body-size text. */
+.portal-main .link { color: var(--ink); border-bottom: 2px solid var(--gold); }
+.portal-main .link:hover { border-bottom-color: var(--ink); }
+.portal-main .btn:focus-visible, .portal-main .link:focus-visible, .portal-main a:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .metric-band.inline { border-radius: var(--radius); margin: 16px 0 0; }
 .p-photo { aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: var(--sand); }
 /* --- narrow-viewport containment -------------------------------------------------
