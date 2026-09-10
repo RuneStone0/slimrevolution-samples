@@ -177,11 +177,13 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 20px; }
 
 /* Metric band (signature) --------------------------------------------------- */
 .metric-band {
-  display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline;
+  display: flex; gap: 12px 28px; flex-wrap: wrap; align-items: flex-start;
   background: var(--espresso); color: var(--ivory-text); border-radius: 0 0 var(--radius) var(--radius);
-  padding: 14px 18px; margin: 0 -28px -28px;
+  padding: 16px 20px 18px;
+  margin: auto 0 0;             /* pin the band to the bottom of the card (it is a sibling of .body,
+                                   so the old negative -28px margins bled it past the card and clipped it) */
 }
-.metric-band .m { display: flex; flex-direction: column; }
+.metric-band .m { display: flex; flex-direction: column; gap: 2px; min-width: 88px; }
 .metric-band .m b { color: var(--gold); font-size: 20px; font-family: var(--serif); }
 .metric-band .m span { font-size: 12px; color: rgba(244, 238, 227, 0.72); text-transform: uppercase; letter-spacing: 1px; }
 
@@ -352,7 +354,7 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
   .step-connector { transform: rotate(90deg); }
 
   .ladder .rung { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .metric-band { margin: 0 -22px -22px; }
+  .metric-band { margin: auto 0 0; padding: 14px 18px 16px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .sticky-book { display: flex; }
