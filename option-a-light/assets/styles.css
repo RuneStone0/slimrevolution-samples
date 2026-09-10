@@ -474,3 +474,19 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
   .portal-main .p-row .p-actions { width: 100%; }
 }
 @media (max-width: 768px) { .p-grid-2 { grid-template-columns: 1fr; } .p-head h1 { font-size: 28px; } }
+
+/* ==== MOBILE TOUCH TARGETS ==== */
+/* Measured at a 390px viewport: the burger-menu label was 44x21px — below the 24px WCAG 2.5.8
+   minimum and far below the 44px thumb guideline — and Log in/out was 24px tall. These are the
+   controls a phone user actually has to hit, so they get a real hit area. Mobile-scoped on
+   purpose: .nav-toggle-label is display:none on desktop and must stay that way. */
+@media (max-width: 768px) {
+  .nav-toggle-label { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 64px; padding: 0 14px; border: 1px solid var(--sand); border-radius: 999px; }
+  .header-login { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; margin-right: -12px; }
+  .brand { display: inline-flex; align-items: center; min-height: 44px; }
+  .sticky-book .btn { min-height: 48px; }
+  .footer-legal a { display: inline-block; padding: 8px 0; }
+  .tabs label { min-height: 44px; display: inline-flex; align-items: center; }
+}
+/* wide data tables scroll inside their card; trim the minimum so there is less to scroll */
+.p-table { min-width: 460px; }
