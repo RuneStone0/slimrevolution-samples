@@ -17,8 +17,18 @@ Travis Kamper. Shared as live, clickable previews (not finished designs).
 | [`option-a-light/`](option-a-light/) | Completely new look — warm ivory + gold ("clean-luxe") |
 | [`option-b-teal/`](option-b-teal/) | Keeps the existing brand colour — built around the logo teal (#73baba) |
 
-Each option is a self-contained static site with four pages: home, the VacuTherm product page,
-the Transformation Membership page, and a simplified member area (`portal.html`).
+Each option is a self-contained static site with **eight pages**: home, the VacuTherm product page,
+the Transformation Membership page, and a five-page member area (the logged-in section):
+
+| Member area page | What it shows |
+|---|---|
+| `portal.html` | Overview — welcome back, plan, next booking, progress snapshot |
+| `portal-membership.html` | My Membership — plan, what's included, usage this month, add-on pricing, invoices |
+| `portal-bookings.html` | Bookings — upcoming and past sessions, reschedule/cancel, preferences |
+| `portal-progress.html` | My Progress — 21-metric scan history, weight/body-fat chart, dated photos, trainer notes |
+| `portal-settings.html` | Settings — profile, notifications, billing, security, language |
+
+The member area is the answer to the current site's 12+ scattered member menu items: five pages instead.
 
 Open the chooser page (`index.html`) to click through both.
 

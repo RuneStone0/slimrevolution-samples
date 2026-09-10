@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress | Slim Revolution</title>
+<meta name="description" content="Your 21-metric body scan, month by month: weight, body fat, muscle mass and waist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ======================= HEADER (logged in) ======================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt="Slim Revolution logo">Slim Revolution</a>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="vacutherm.html">VacuTherm</a>
+      <a href="membership.html">Memberships</a>
+      <a class="active" href="portal.html">My Account</a>
+    </nav>
+    <div class="header-cta">
+      <span class="portal-user-chip"><img src="assets/img/avatar-2.jpg" alt="">Hi, Rachel</span>
+      <a class="header-login" href="index.html">Log out</a>
+    </div>
+    <label for="navToggle" class="nav-toggle-label">Menu</label>
+  </div>
+</header>
+
+<!-- ======================= MEMBER PORTAL ======================= -->
+<section class="section section--sand" style="padding:48px 0 72px;">
+  <div class="container">
+    <div class="portal">
+      <aside class="portal-nav card" style="padding:0;overflow:hidden;">
+        <div class="portal-user">
+          <img src="assets/img/avatar-2.jpg" alt="Rachel">
+          <div><b>Rachel T.</b><span>Target Transformation · $600/mo</span></div>
+        </div>
+        <nav class="portal-menu">
+          <a href="portal.html">Overview</a>
+          <a href="portal-membership.html">My Membership</a>
+          <a href="portal-bookings.html">Bookings</a>
+          <a class="active" href="portal-progress.html">My Progress</a>
+          <a href="portal-settings.html">Settings</a>
+        </nav>
+        <div class="portal-note">Membership · billing · bookings · progress — consolidated into one clean menu.</div>
+      </aside>
+
+      <main class="portal-main">
+        <div class="p-head">
+          <div>
+            <h1>My Progress</h1>
+            <p class="lead">Your 21-metric body scan, month by month — the reason this studio measures instead of guessing.</p>
+          </div>
+          <div class="p-head-actions">
+            <a class="btn btn--ghost" href="portal-bookings.html">Book a scan</a>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><b>−48.0 lb</b><span>weight since March</span></div>
+          <div class="metric"><b>−6.2%</b><span>body fat</span></div>
+          <div class="metric"><b>+3.1 lb</b><span>muscle retained</span></div>
+        </div>
+
+        <div class="chart-card card p-section">
+          <h3>Weight and body fat, seven scans</h3>
+          <div class="sub">Mar 12 → Sep 3, 2026 · measured on the studio's body-composition scanner</div>
+          <div class="chart-wrap">
+            <svg class="p-chart" viewBox="0 0 600 190" preserveAspectRatio="none" role="img" aria-label="Line chart: weight falls from 216.4 lb in March to 168.4 lb in September">
+              <line class="grid" x1="0" y1="40" x2="600" y2="40"></line>
+              <line class="grid" x1="0" y1="95" x2="600" y2="95"></line>
+              <line class="grid" x1="0" y1="150" x2="600" y2="150"></line>
+              <polyline class="line" points="20,22 113,45 206,68 299,95 392,120 485,141 570,160"></polyline>
+              <circle class="dot" cx="20" cy="22" r="4"></circle>
+              <circle class="dot" cx="299" cy="95" r="4"></circle>
+              <circle class="dot" cx="570" cy="160" r="4"></circle>
+              <text x="20" y="16">216.4 lb</text>
+              <text x="545" y="180">168.4 lb</text>
+            </svg>
+          </div>
+          <div class="chart-legend"><span class="sw"></span>Weight (lb), lower is better</div>
+          <div class="chart-caption">Every point is a dated scan, not a self-reported number.</div>
+        </div>
+
+        <div class="card p-section">
+          <h3>Scan history</h3>
+          <p class="sub">Deltas are measured against your previous scan.</p>
+          <div class="p-table-wrap">
+          <table class="p-table">
+            <thead><tr><th>Scan date</th><th class="num">Weight</th><th class="num">Body fat</th><th class="num">Muscle mass</th><th class="num">Waist</th><th>Change</th></tr></thead>
+            <tbody>
+              <tr><td>Mar 12, 2026 <span class="pill" style="margin-left:6px;">Baseline</span></td><td class="num">216.4 lb</td><td class="num">38.1%</td><td class="num">118.2 lb</td><td class="num">38.5 in</td><td class="mut">—</td></tr>
+              <tr><td>Apr 9, 2026</td><td class="num">209.8 lb</td><td class="num">36.9%</td><td class="num">118.9 lb</td><td class="num">37.4 in</td><td class="delta delta--good">−6.6 lb</td></tr>
+              <tr><td>May 7, 2026</td><td class="num">203.2 lb</td><td class="num">35.6%</td><td class="num">119.8 lb</td><td class="num">36.6 in</td><td class="delta delta--good">−6.6 lb</td></tr>
+              <tr><td>Jun 11, 2026</td><td class="num">196.5 lb</td><td class="num">34.2%</td><td class="num">120.4 lb</td><td class="num">35.9 in</td><td class="delta delta--good">−6.7 lb</td></tr>
+              <tr><td>Jul 9, 2026</td><td class="num">189.9 lb</td><td class="num">33.0%</td><td class="num">121.0 lb</td><td class="num">35.1 in</td><td class="delta delta--good">−6.6 lb</td></tr>
+              <tr><td>Aug 6, 2026</td><td class="num">182.3 lb</td><td class="num">32.4%</td><td class="num">121.4 lb</td><td class="num">34.6 in</td><td class="delta delta--good">−7.6 lb</td></tr>
+              <tr class="is-focus"><td>Sep 3, 2026 <span class="pill" style="margin-left:6px;">Latest</span></td><td class="num">168.4 lb</td><td class="num">31.9%</td><td class="num">121.3 lb</td><td class="num">35.0 in</td><td class="delta delta--good">−13.9 lb</td></tr>
+              <tr><td class="mut">Total change</td><td class="num delta delta--good">−48.0 lb</td><td class="num delta delta--good">−6.2 pts</td><td class="num delta delta--good">+3.1 lb</td><td class="num delta delta--good">−3.5 in</td><td class="mut">8 months</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <div class="grid-2 p-section">
+          <div class="card">
+            <h3>Dated photos</h3>
+            <p class="sub">Taken on scan days, same light, same pose.</p>
+            <div class="grid-3" style="gap:10px;">
+              <div class="fill p-photo"><img src="assets/img/transformation-1.jpg" alt="Progress photo, March 2026"></div>
+              <div class="fill p-photo"><img src="assets/img/transformation-2.jpg" alt="Progress photo, June 2026"></div>
+              <div class="fill p-photo"><img src="assets/img/transformation-3.jpg" alt="Progress photo, September 2026"></div>
+            </div>
+            <p style="margin:10px 0 0;font-size:13.5px;color:var(--muted);">Mar · Jun · Sep — private to your account.</p>
+          </div>
+          <div class="card">
+            <h3>Trainer notes</h3>
+            <p class="sub">Written after each monthly check-in.</p>
+            <div class="p-row">
+              <div><div class="p-when">Sep 3, 2026 · Travis K.</div><div class="p-meta">Muscle held steady through a 14 lb month — strength work is doing its job. Keep protein at target and add one EMSculpt per week.</div></div>
+            </div>
+            <div class="p-row">
+              <div><div class="p-when">Aug 6, 2026 · Travis K.</div><div class="p-meta">Waist down again. Sleep was the limiter last month; the new evening schedule is working.</div></div>
+            </div>
+            <div class="p-row">
+              <div><div class="p-when">Jul 9, 2026 · Travis K.</div><div class="p-meta">Halfway point. Holding muscle while dropping fat — exactly the plan.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclosure">Illustration only — sample data. Individual results vary; figures shown are examples of how a member's real scans would be presented.</div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:var(--ivory-text);"><img class="brand-logo" src="assets/img/logo-white.svg" alt="Slim Revolution logo">Slim Revolution</div>
+        <p class="tagline">The personalized body-sculpting studio for women and men.</p>
+        <div class="nap">Slim Revolution LLC<br>166 Pioneer Crossing Ste 105<br>Saratoga Springs, UT 84045<br><a href="tel:+13852307396">(385) 616-2266</a><br><a href="mailto:jk.slimrevolution@gmail.com">jk.slimrevolution@gmail.com</a></div>
+        <div class="footer-hours">Mon–Fri 8:00 AM–7:00 PM<br>Sat 9:00 AM–4:00 PM · Sun Closed</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Weight Loss Coaching</a>
+        <a href="index.html#services">Body Composition Analysis</a>
+        <a href="vacutherm.html">VacuTherm Treadmill</a>
+        <a href="index.html#services">EMSculpt</a>
+        <a href="index.html#services">Lymph Rollers</a>
+        <a href="index.html#services">Personal Training</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="membership.html">Memberships</a>
+        <a href="index.html#book">Book Online</a>
+        <a href="portal.html">Member Login</a>
+        <a href="index.html#visit">Visit Us</a>
+        <a href="index.html#visit">About</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="ig-strip">
+          <div class="tile"><img src="assets/img/studio.jpg" alt="Slim Revolution studio"></div>
+          <div class="tile"><img src="assets/img/vacutherm-hero.png" alt="VacuTherm"></div>
+          <div class="tile"><img src="assets/img/emsculpt.jpg" alt="EMSculpt"></div>
+          <div class="tile"><img src="assets/img/roller.png" alt="Lymph Roller"></div>
+          <div class="tile"><img src="assets/img/coach-client.jpg" alt="Coaching"></div>
+          <div class="tile"><img src="assets/img/transformation-2.jpg" alt="Member results"></div>
+        </div>
+        <p style="font-size:13px;color:rgba(244,238,227,0.6);margin-top:12px;">@slimrevolution_</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Sign Waiver</a><a href="#">Privacy Policy</a><a href="#">Accessibility Statement</a><a href="#">Terms &amp; Conditions</a><a href="#">Refund Policy</a>
+      <span style="margin-left:auto;">© <span data-year>2026</span> by Slim Revolution LLC</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

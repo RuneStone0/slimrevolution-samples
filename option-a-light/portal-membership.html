@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Membership | Slim Revolution</title>
+<meta name="description" content="Your Slim Revolution plan, what is included, usage this month and billing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ======================= HEADER (logged in) ======================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Slim Revolution<span class="dot"></span></a>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="vacutherm.html">VacuTherm</a>
+      <a href="membership.html">Memberships</a>
+      <a class="active" href="portal.html">My Account</a>
+    </nav>
+    <div class="header-cta">
+      <span class="portal-user-chip"><img src="assets/img/avatar-2.jpg" alt="">Hi, Rachel</span>
+      <a class="header-login" href="index.html">Log out</a>
+    </div>
+    <label for="navToggle" class="nav-toggle-label">Menu</label>
+  </div>
+</header>
+
+<!-- ======================= MEMBER PORTAL ======================= -->
+<section class="section section--sand" style="padding:48px 0 72px;">
+  <div class="container">
+    <div class="portal">
+      <aside class="portal-nav card" style="padding:0;overflow:hidden;">
+        <div class="portal-user">
+          <img src="assets/img/avatar-2.jpg" alt="Rachel">
+          <div><b>Rachel T.</b><span>Target Transformation · $600/mo</span></div>
+        </div>
+        <nav class="portal-menu">
+          <a href="portal.html">Overview</a>
+          <a class="active" href="portal-membership.html">My Membership</a>
+          <a href="portal-bookings.html">Bookings</a>
+          <a href="portal-progress.html">My Progress</a>
+          <a href="portal-settings.html">Settings</a>
+        </nav>
+        <div class="portal-note">Membership · billing · bookings · progress — consolidated into one clean menu.</div>
+      </aside>
+
+      <main class="portal-main">
+        <div class="p-head">
+          <div>
+            <h1>My Membership</h1>
+            <p class="lead">Your current plan, what is included, how much you have used this month, and your billing.</p>
+          </div>
+          <div class="p-head-actions">
+            <a class="btn btn--ghost" href="membership.html">Compare plans</a>
+            <a class="btn btn--gold" href="index.html#book">Add a session</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Current plan</div>
+          <div class="p-row" style="border-bottom:1px solid var(--sand);">
+            <div>
+              <div class="p-when" style="font-size:22px;font-family:var(--serif);">Target Transformation</div>
+              <div class="p-meta">$600.00 / month · renews Sep 15, 2026 · member since Mar 12, 2026</div>
+            </div>
+            <span class="pill pill--ok">Active</span>
+          </div>
+          <div class="metric-band inline">
+            <div class="m"><b>9 of unlimited</b><span>VacuTherm sessions</span></div>
+            <div class="m"><b>3 of 4</b><span>EMSculpt this month</span></div>
+            <div class="m"><b>1 of 1</b><span>Body scan used</span></div>
+          </div>
+          <p style="color:var(--muted);margin:16px 0 0;font-size:14px;">Your plan renews automatically on the 15th of each month. Unlimited VacuTherm and Lymph Roller sessions, one EMSculpt session per week, a monthly body-composition scan, and a monthly coaching check-in are all included.</p>
+        </div>
+
+        <div class="p-section card">
+          <h3>What's included</h3>
+          <p class="sub">Every session below is covered by Target Transformation.</p>
+          <ul class="checklist">
+            <li>Unlimited VacuTherm Treadmill sessions (30 min)</li>
+            <li>Unlimited Lymph Roller sessions (15 min)</li>
+            <li>EMSculpt — one session per week</li>
+            <li>Monthly 21-metric body-composition scan</li>
+            <li>Monthly coaching check-in with your trainer</li>
+            <li>Waiver and onboarding managed in your account</li>
+          </ul>
+        </div>
+
+        <div class="p-section card">
+          <h3>Add-ons &amp; per-session pricing</h3>
+          <p class="sub">Anything outside your plan, charged at member rates.</p>
+          <div class="p-table-wrap">
+          <table class="p-table">
+            <thead><tr><th>Service</th><th>Included</th><th class="num">Member price</th><th class="num">Non-member</th></tr></thead>
+            <tbody>
+              <tr><td>VacuTherm Session</td><td>Unlimited</td><td class="num mut">included</td><td class="num">$45</td></tr>
+              <tr><td>Lymph Roller</td><td>Unlimited</td><td class="num mut">included</td><td class="num">$15</td></tr>
+              <tr><td>EMSculpt</td><td>1×/week</td><td class="num mut">included</td><td class="num">$135</td></tr>
+              <tr><td>Extra EMSculpt session</td><td>—</td><td class="num">$110</td><td class="num">$135</td></tr>
+              <tr><td>AromaTouch Technique</td><td>—</td><td class="num">$50</td><td class="num">$60</td></tr>
+              <tr><td>Body Composition Analysis</td><td>1×/month</td><td class="num">$10</td><td class="num">$10</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <div class="p-section card" id="billing">
+          <h3>Billing</h3>
+          <p class="sub">Next charge and recent invoices.</p>
+          <div class="p-table-wrap">
+          <table class="p-table">
+            <thead><tr><th>Date</th><th>Description</th><th class="num">Amount</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr class="is-focus"><td>Sep 15, 2026</td><td>Target Transformation — monthly</td><td class="num">$600.00</td><td><span class="pill">Scheduled</span></td><td class="num mut">—</td></tr>
+              <tr><td>Aug 15, 2026</td><td>Target Transformation — monthly</td><td class="num">$600.00</td><td><span class="pill pill--ok">Paid</span></td><td class="num"><a class="link" href="#">Invoice</a></td></tr>
+              <tr><td>Jul 15, 2026</td><td>Target Transformation — monthly</td><td class="num">$600.00</td><td><span class="pill pill--ok">Paid</span></td><td class="num"><a class="link" href="#">Invoice</a></td></tr>
+              <tr><td>Jun 15, 2026</td><td>Target Transformation + 2 extra EMSculpt</td><td class="num">$820.00</td><td><span class="pill pill--ok">Paid</span></td><td class="num"><a class="link" href="#">Invoice</a></td></tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="p-grid-2" style="margin-top:20px;">
+            <div>
+              <dl class="p-kv">
+                <dt>Payment method</dt><dd>Visa •••• 4242</dd>
+                <dt>Expires</dt><dd>08 / 28</dd>
+                <dt>Billing address</dt><dd>Saratoga Springs, UT</dd>
+              </dl>
+              <p style="margin:14px 0 0;"><a class="link" href="portal-settings.html#billing">Update payment method →</a></p>
+            </div>
+            <div class="p-note">
+              Need to pause? Memberships can be paused once per year for up to 4 weeks — ask at the front desk
+              or send a message from Settings. Cancellations take effect at the end of the current billing period.
+            </div>
+          </div>
+        </div>
+
+        <div class="disclosure">Illustration only — sample data for design review. Prices, dates and usage figures are examples.</div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:var(--ivory-text);">Slim Revolution<span class="dot"></span></div>
+        <p class="tagline">The personalized body-sculpting studio for women and men.</p>
+        <div class="nap">Slim Revolution LLC<br>166 Pioneer Crossing Ste 105<br>Saratoga Springs, UT 84045<br><a href="tel:+13852307396">(385) 616-2266</a><br><a href="mailto:jk.slimrevolution@gmail.com">jk.slimrevolution@gmail.com</a></div>
+        <div class="footer-hours">Mon–Fri 8:00 AM–7:00 PM<br>Sat 9:00 AM–4:00 PM · Sun Closed</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Weight Loss Coaching</a>
+        <a href="index.html#services">Body Composition Analysis</a>
+        <a href="vacutherm.html">VacuTherm Treadmill</a>
+        <a href="index.html#services">EMSculpt</a>
+        <a href="index.html#services">Lymph Rollers</a>
+        <a href="index.html#services">Personal Training</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="membership.html">Memberships</a>
+        <a href="index.html#book">Book Online</a>
+        <a href="portal.html">Member Login</a>
+        <a href="index.html#visit">Visit Us</a>
+        <a href="index.html#visit">About</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="ig-strip">
+          <div class="tile"><img src="assets/img/studio.jpg" alt="Slim Revolution studio"></div>
+          <div class="tile"><img src="assets/img/vacutherm-hero.png" alt="VacuTherm"></div>
+          <div class="tile"><img src="assets/img/emsculpt.jpg" alt="EMSculpt"></div>
+          <div class="tile"><img src="assets/img/roller.png" alt="Lymph Roller"></div>
+          <div class="tile"><img src="assets/img/coach-client.jpg" alt="Coaching"></div>
+          <div class="tile"><img src="assets/img/transformation-2.jpg" alt="Member results"></div>
+        </div>
+        <p style="font-size:13px;color:rgba(244,238,227,0.6);margin-top:12px;">@slimrevolution_</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Sign Waiver</a><a href="#">Privacy Policy</a><a href="#">Accessibility Statement</a><a href="#">Terms &amp; Conditions</a><a href="#">Refund Policy</a>
+      <span style="margin-left:auto;">© <span data-year>2026</span> by Slim Revolution LLC</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

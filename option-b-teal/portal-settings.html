@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | Slim Revolution</title>
+<meta name="description" content="Profile, notifications, security, billing and privacy settings for your member account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ======================= HEADER (logged in) ======================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt="Slim Revolution logo">Slim Revolution</a>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="vacutherm.html">VacuTherm</a>
+      <a href="membership.html">Memberships</a>
+      <a class="active" href="portal.html">My Account</a>
+    </nav>
+    <div class="header-cta">
+      <span class="portal-user-chip"><img src="assets/img/avatar-2.jpg" alt="">Hi, Rachel</span>
+      <a class="header-login" href="index.html">Log out</a>
+    </div>
+    <label for="navToggle" class="nav-toggle-label">Menu</label>
+  </div>
+</header>
+
+<!-- ======================= MEMBER PORTAL ======================= -->
+<section class="section section--sand" style="padding:48px 0 72px;">
+  <div class="container">
+    <div class="portal">
+      <aside class="portal-nav card" style="padding:0;overflow:hidden;">
+        <div class="portal-user">
+          <img src="assets/img/avatar-2.jpg" alt="Rachel">
+          <div><b>Rachel T.</b><span>Target Transformation · $600/mo</span></div>
+        </div>
+        <nav class="portal-menu">
+          <a href="portal.html">Overview</a>
+          <a href="portal-membership.html">My Membership</a>
+          <a href="portal-bookings.html">Bookings</a>
+          <a href="portal-progress.html">My Progress</a>
+          <a class="active" href="portal-settings.html">Settings</a>
+        </nav>
+        <div class="portal-note">Membership · billing · bookings · progress — consolidated into one clean menu.</div>
+      </aside>
+
+      <main class="portal-main">
+        <div class="p-head">
+          <div>
+            <h1>Settings</h1>
+            <p class="lead">Your details, notifications, security and billing — all in one place.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Profile</h3>
+          <p class="sub">How we reach you and who we see at check-in.</p>
+          <div class="p-grid-2">
+            <div class="p-field">
+              <label for="s-first">First name</label>
+              <input class="p-input" id="s-first" type="text" value="Rachel">
+            </div>
+            <div class="p-field">
+              <label for="s-last">Last name</label>
+              <input class="p-input" id="s-last" type="text" value="Thompson">
+            </div>
+            <div class="p-field">
+              <label for="s-email">Email</label>
+              <input class="p-input" id="s-email" type="email" value="rachel.t@example.com">
+              <div class="hint">Used for booking confirmations and monthly scan summaries.</div>
+            </div>
+            <div class="p-field">
+              <label for="s-phone">Mobile</label>
+              <input class="p-input" id="s-phone" type="tel" value="(385) 555-0142">
+              <div class="hint">For appointment reminders only.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-section">
+          <h3>Notifications</h3>
+          <p class="sub">Choose what we send you. Booking reminders are always on.</p>
+          <div class="p-toggle">
+            <div class="t-copy"><b>Appointment reminders</b><span>Email 24 hours and SMS 2 hours before a session</span></div>
+            <span class="switch"><input type="checkbox" checked aria-label="Appointment reminders"><span class="track"></span></span>
+          </div>
+          <div class="p-toggle">
+            <div class="t-copy"><b>Scan results ready</b><span>Email when your body-composition report is available</span></div>
+            <span class="switch"><input type="checkbox" checked aria-label="Scan results"><span class="track"></span></span>
+          </div>
+          <div class="p-toggle">
+            <div class="t-copy"><b>Monthly progress summary</b><span>A short recap of your measurements and trainer notes</span></div>
+            <span class="switch"><input type="checkbox" checked aria-label="Progress summary"><span class="track"></span></span>
+          </div>
+          <div class="p-toggle">
+            <div class="t-copy"><b>Offers and events</b><span>Member pricing, Girls' Night Revolution, giveaways</span></div>
+            <span class="switch"><input type="checkbox" aria-label="Offers and events"><span class="track"></span></span>
+          </div>
+        </div>
+
+        <div class="card p-section" id="billing">
+          <h3>Billing</h3>
+          <p class="sub">Your plan, card on file, and where to find invoices.</p>
+          <div class="p-grid-2">
+            <div>
+              <dl class="p-kv">
+                <dt>Plan</dt><dd>Target Transformation · $600/mo</dd>
+                <dt>Renews</dt><dd>Sep 15, 2026</dd>
+                <dt>Card on file</dt><dd>Visa •••• 4242 (expires 08/28)</dd>
+              </dl>
+              <div class="p-actions-bottom">
+                <a class="btn btn--ghost" href="portal-membership.html#billing">Invoices</a>
+                <a class="btn btn--ghost" href="#">Update card</a>
+              </div>
+            </div>
+            <div class="p-note">
+              Pause or cancel any time from this page — no phone calls. Pausing keeps your scan history and your
+              member rate; cancellations run to the end of the current billing period.
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-section">
+          <h3>Security</h3>
+          <p class="sub">Keep your account and your photos private.</p>
+          <div class="p-grid-2">
+            <div class="p-field">
+              <label for="s-pw">New password</label>
+              <input class="p-input" id="s-pw" type="password" value="password123">
+              <div class="hint">At least 8 characters. Last changed 4 months ago.</div>
+            </div>
+            <div class="p-field">
+              <label for="s-pw2">Confirm password</label>
+              <input class="p-input" id="s-pw2" type="password" value="password123">
+            </div>
+          </div>
+          <div class="p-toggle" style="margin-top:6px;">
+            <div class="t-copy"><b>Two-factor authentication</b><span>Ask for a code from your phone when signing in</span></div>
+            <span class="switch"><input type="checkbox" aria-label="Two-factor authentication"><span class="track"></span></span>
+          </div>
+        </div>
+
+        <div class="card p-section">
+          <h3>Preferences</h3>
+          <p class="sub">Small things that make the studio fit your week better.</p>
+          <div class="p-grid-2">
+            <div class="p-field">
+              <label for="s-lang">Language</label>
+              <select class="p-select" id="s-lang"><option>English</option><option>Español</option></select>
+              <div class="hint">Spanish is being explored — see the translation note in the change log.</div>
+            </div>
+            <div class="p-field">
+              <label for="s-coach">Preferred trainer</label>
+              <select class="p-select" id="s-coach"><option>Travis K.</option><option>Any available</option></select>
+            </div>
+          </div>
+          <div class="p-note" style="margin-top:6px;">Your measurement history and photos are visible to you and your trainer only. We never share body-composition data with third parties.</div>
+        </div>
+
+        <div class="p-actions-bottom">
+          <a class="btn btn--gold" href="#">Save changes</a>
+          <a class="btn btn--ghost" href="portal.html">Cancel</a>
+        </div>
+
+        <div class="disclosure" style="margin-top:24px;">Illustration only — sample data. This concept consolidates the member area's scattered settings, subscriptions and order pages into one screen.</div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:var(--ivory-text);"><img class="brand-logo" src="assets/img/logo-white.svg" alt="Slim Revolution logo">Slim Revolution</div>
+        <p class="tagline">The personalized body-sculpting studio for women and men.</p>
+        <div class="nap">Slim Revolution LLC<br>166 Pioneer Crossing Ste 105<br>Saratoga Springs, UT 84045<br><a href="tel:+13852307396">(385) 616-2266</a><br><a href="mailto:jk.slimrevolution@gmail.com">jk.slimrevolution@gmail.com</a></div>
+        <div class="footer-hours">Mon–Fri 8:00 AM–7:00 PM<br>Sat 9:00 AM–4:00 PM · Sun Closed</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Weight Loss Coaching</a>
+        <a href="index.html#services">Body Composition Analysis</a>
+        <a href="vacutherm.html">VacuTherm Treadmill</a>
+        <a href="index.html#services">EMSculpt</a>
+        <a href="index.html#services">Lymph Rollers</a>
+        <a href="index.html#services">Personal Training</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="membership.html">Memberships</a>
+        <a href="index.html#book">Book Online</a>
+        <a href="portal.html">Member Login</a>
+        <a href="index.html#visit">Visit Us</a>
+        <a href="index.html#visit">About</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="ig-strip">
+          <div class="tile"><img src="assets/img/studio.jpg" alt="Slim Revolution studio"></div>
+          <div class="tile"><img src="assets/img/vacutherm-hero.png" alt="VacuTherm"></div>
+          <div class="tile"><img src="assets/img/emsculpt.jpg" alt="EMSculpt"></div>
+          <div class="tile"><img src="assets/img/roller.png" alt="Lymph Roller"></div>
+          <div class="tile"><img src="assets/img/coach-client.jpg" alt="Coaching"></div>
+          <div class="tile"><img src="assets/img/transformation-2.jpg" alt="Member results"></div>
+        </div>
+        <p style="font-size:13px;color:rgba(244,238,227,0.6);margin-top:12px;">@slimrevolution_</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Sign Waiver</a><a href="#">Privacy Policy</a><a href="#">Accessibility Statement</a><a href="#">Terms &amp; Conditions</a><a href="#">Refund Policy</a>
+      <span style="margin-left:auto;">© <span data-year>2026</span> by Slim Revolution LLC</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
