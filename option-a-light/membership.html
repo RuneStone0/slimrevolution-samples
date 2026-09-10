@@ -15,10 +15,13 @@
   /* Pricing plan tabs (CSS-only) */
   .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; }
   .tabs input { display: none; }
-  .tabs label { cursor: pointer; padding: 11px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid var(--sand); color: var(--muted); background: var(--white); }
+  .tabs label { cursor: pointer; padding: 13px 26px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid var(--sand); color: var(--muted); background: var(--white); }
   #tabMonthly:checked ~ .tabs label[for="tabMonthly"],
   #tabAnnual:checked ~ .tabs label[for="tabAnnual"] { background: var(--espresso); color: var(--ivory-text); border-color: var(--espresso); }
   .pane { display: none; }
+  /* the radios must be SIBLINGS of .tabs for the ~ selectors, so `.tabs input` never
+     matched them and they rendered as two raw 13px radio dots. Hide them here instead. */
+  #tabMonthly, #tabAnnual { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
   #tabMonthly:checked ~ .pane-monthly { display: block; }
   #tabAnnual:checked ~ .pane-annual { display: block; }
 </style>
