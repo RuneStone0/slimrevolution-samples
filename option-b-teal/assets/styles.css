@@ -445,4 +445,18 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
 .p-chart text { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
 .metric-band.inline { border-radius: var(--radius); margin: 16px 0 0; }
 .p-photo { aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: var(--sand); }
+/* --- narrow-viewport containment -------------------------------------------------
+   The grid/flex min-width:auto trap: as a grid item, .portal-main refuses to shrink
+   below its content's min-content width, so a .p-table (min-width 520px) inside
+   overflow-x:auto still widened the whole page (~596px at a 390px viewport).
+   min-width:0 lets the wrapper shrink and the table scroll inside it instead. */
+.portal { min-width: 0; }
+.portal-main { min-width: 0; }
+.portal-main .card { min-width: 0; }
+.p-table-wrap { max-width: 100%; min-width: 0; }
+@media (max-width: 768px) {
+  .portal-main .metrics { grid-template-columns: 1fr; }
+  .portal-main .metric-band { gap: 10px 18px; }
+  .portal-main .p-row .p-actions { width: 100%; }
+}
 @media (max-width: 768px) { .p-grid-2 { grid-template-columns: 1fr; } .p-head h1 { font-size: 28px; } }
