@@ -17,6 +17,8 @@
   --espresso-2: #2A241E;
   --muted: #6E655A;
   --ivory-text: #F4EEE3;
+  --accent-on-dark: #C6A15B;  /* gold on espresso = 6.96:1 (stars on the dark hero) */
+  --accent-on-dark: #C6A15B;  /* gold on espresso = 6.96:1 (stars on the dark hero) */
 
   /* Type */
   --serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
@@ -127,7 +129,7 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 20px; }
 .hero .subhead { color: rgba(244, 238, 227, 0.82); margin: 20px 0 28px; font-size: 18px; max-width: 560px; }
 .hero-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 .hero-trust { margin-top: 22px; font-size: 14px; color: rgba(244, 238, 227, 0.72); }
-.hero-trust .stars { color: var(--gold); letter-spacing: 2px; }
+.hero-trust .stars { color: var(--accent-on-dark); letter-spacing: 2px; }
 .hero-media { position: relative; }
 .hero-media .frame {
   border-radius: var(--radius); overflow: hidden;
@@ -196,7 +198,7 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 20px; }
 .story .body .attr b { color: var(--ink); }
 
 .t-card { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
-.t-card .stars { color: var(--gold); letter-spacing: 2px; font-size: 14px; }
+.t-card .stars { color: var(--gold-dark); letter-spacing: 2px; font-size: 14px; }
 .t-card blockquote { font-family: var(--serif); font-size: 19px; line-height: 1.45; margin: 12px 0; }
 .t-card .who { display: flex; align-items: center; gap: 12px; }
 .t-card .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--sand); flex: none; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
@@ -474,19 +476,83 @@ details.faq .a { padding: 0 22px 20px; color: var(--muted); font-size: 16px; }
   .portal-main .p-row .p-actions { width: 100%; }
 }
 @media (max-width: 768px) { .p-grid-2 { grid-template-columns: 1fr; } .p-head h1 { font-size: 28px; } }
-
-/* ==== MOBILE TOUCH TARGETS ==== */
-/* Measured at a 390px viewport: the burger-menu label was 44x21px — below the 24px WCAG 2.5.8
-   minimum and far below the 44px thumb guideline — and Log in/out was 24px tall. These are the
-   controls a phone user actually has to hit, so they get a real hit area. Mobile-scoped on
-   purpose: .nav-toggle-label is display:none on desktop and must stay that way. */
+/* --- the member menu on a phone -----------------------------------------------
+   Measured: the stacked side menu was 419px tall, so the page content did not
+   start until 571px down — on an 844px-tall phone, 68% of the first screen was
+   navigation. It collapses to one row of chips that scrolls sideways instead, so
+   the content heading is visible immediately and the menu is still one tap away. */
 @media (max-width: 768px) {
-  .nav-toggle-label { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 64px; padding: 0 14px; border: 1px solid var(--sand); border-radius: 999px; }
-  .header-login { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; margin-right: -12px; }
+  .portal-band { padding: 24px 0 48px; }
+  .portal-nav { position: static; }
+  .portal-user { padding: 12px 14px; gap: 10px; }
+  .portal-user img { width: 40px; height: 40px; }
+  .portal-user b { font-size: 15px; }
+  .portal-menu { flex-direction: row; gap: 8px; overflow-x: auto; padding: 10px 12px; scrollbar-width: none; }
+  .portal-menu::-webkit-scrollbar { display: none; }
+  .portal-menu a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--sand); border-radius: 999px; background: var(--white); font-size: 14.5px; white-space: nowrap; }
+  .portal-menu a.active { background: var(--espresso); color: var(--ivory-text); border-color: var(--espresso); }
+  .portal-note { display: none; }
+}
+
+/* ==== MOBILE UX (all figures measured at a true 390px viewport) ============
+   Second mobile pass. Each rule exists because a measurement found the previous
+   behaviour unusable on a phone:
+   - the burger dropdown centred every row and sized it to its text (ragged left
+     edge, ~40px hit widths) and the toggle never offered a way to close it;
+   - in-page anchors landed under the 72px sticky header;
+   - the sticky Book bar grew to 92px because its label wrapped to two lines while
+     the body carried 66px of bottom padding, so the last footer line sat under it;
+   - footer link rows were 32px tall.
+   Mobile-scoped on purpose: desktop is deliberately untouched.
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* in-page anchors must clear the sticky header */
+  [id] { scroll-margin-top: 88px; }
+
+  /* burger dropdown: full-width left-aligned rows that read as a menu */
+  .nav { top: 100%; align-items: stretch; padding: 6px 12px 14px; box-shadow: 0 18px 26px rgba(0, 0, 0, .10); }
+  .nav a { display: flex; align-items: center; min-height: 48px; padding: 0 12px; font-size: 17px; border-bottom: 1px solid var(--sand); }
+  .nav a:last-child { border-bottom: 0; }
+  .nav a:hover, .nav a:focus-visible { background: var(--sand); }
+
+  /* the toggle doubles as the close button, so it says so and keeps its width */
+  .nav-toggle-label { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 84px; padding: 0 14px; border: 1px solid var(--sand); border-radius: 999px; white-space: nowrap; }
+  .nav-label-close { display: none; }
+  .nav-toggle:checked ~ .nav-toggle-label .nav-label-open { display: none; }
+  .nav-toggle:checked ~ .nav-toggle-label .nav-label-close { display: inline; }
+  .nav-toggle:checked ~ .nav-toggle-label { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+
+  /* header row: at 390px "Slim Revolution" wrapped to two lines and "Log in" ran
+     4-12px underneath the toggle pill at every phone width. nowrap + a smaller
+     brand keeps both on one line; the logo must not be the flex item that shrinks. */
+  .header-inner { gap: 8px; }
+  .header-cta { gap: 10px; }
+  .brand { font-size: 20px; min-height: 44px; white-space: nowrap; }
+  .brand-logo { height: 28px; flex: none; }
+  .header-login { font-size: 14px; min-height: 44px; padding: 0 8px; margin-right: 0; white-space: nowrap; }
+  .nav-toggle-label { min-width: 76px; padding: 0 12px; }
+
+  /* the controls a thumb actually has to hit */
   .brand { display: inline-flex; align-items: center; min-height: 44px; }
-  .sticky-book .btn { min-height: 48px; }
-  .footer-legal a { display: inline-block; padding: 8px 0; }
   .tabs label { min-height: 44px; display: inline-flex; align-items: center; }
+
+  /* sticky Book bar: one line, and enough room left under the page for it.
+     min-width:0 is required — the button is a flex item, so without it the label's
+     min-content width wins and the button runs off the left edge of the screen. */
+  .sticky-book { padding: 8px 14px; gap: 10px; }
+  .sticky-book .btn { flex: 1 1 auto; min-width: 0; min-height: 48px; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  body:has(.sticky-book) { padding-bottom: 84px; }
+
+  /* footer rows a thumb can hit */
+  .site-footer a { display: flex; align-items: center; min-height: 44px; padding: 0; }
+  .site-footer .footer-legal a { display: inline-flex; align-items: center; }
+}
+/* very narrow phones (iPhone SE class): the brand has to give a little more */
+@media (max-width: 380px) {
+  .brand { font-size: 17px; }
+  .brand-logo { height: 24px; }
+  .header-login { font-size: 13px; padding: 0 6px; }
+  .nav-toggle-label { min-width: 70px; padding: 0 10px; font-size: 12px; }
 }
 /* wide data tables scroll inside their card; trim the minimum so there is less to scroll */
 .p-table { min-width: 460px; }

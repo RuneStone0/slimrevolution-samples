@@ -8,7 +8,7 @@
 <style>
   :root{
     --ink:#1f1b16; --muted:#6b6257; --line:#e7dfd3; --bg:#faf7f2; --card:#fff;
-    --gold:#c6a15b; --gold-dark:#a8843d; --teal:#73baba; --teal-dark:#4f9292;
+    --gold:#c6a15b; --gold-dark:#7d5f22; --teal:#73baba; --teal-dark:#376b6b;
     --radius:14px; --shadow:0 1px 2px rgba(31,27,22,.04), 0 8px 24px rgba(31,27,22,.06);
   }
   *{box-sizing:border-box}
@@ -23,21 +23,22 @@
   .lede b{color:var(--ink)}
   .steps{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 34px}
   .step-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;color:#463f37}
-  .step-chip i{font-style:normal;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:11.5px;font-weight:700}
+  .step-chip i{font-style:normal;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:11.5px;font-weight:700;flex:none}
 
-  /* ---------- desktop option panels ---------- */
+  /* ---------- option panels ---------- */
   .options{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
   .opt{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;min-width:0}
   .opt[data-accent="a"]{--accent:var(--gold);--accent-dark:var(--gold-dark)}
   .opt[data-accent="b"]{--accent:var(--teal);--accent-dark:var(--teal-dark)}
 
   .shot{position:relative;display:block;border-bottom:1px solid var(--line);background:#f3ede3;text-decoration:none}
-  .shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;transition:transform .35s ease}
-  .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,0) 45%,rgba(20,16,12,.55) 100%);opacity:.85;transition:opacity .2s}
+  .shot img.shot-desktop{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;transition:transform .35s ease}
+  .shot img.shot-phone{display:none}
+  .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,0) 45%,rgba(20,16,12,.55) 100%);opacity:.85;transition:opacity .2s;pointer-events:none}
   .shot .shot-cta{position:absolute;left:50%;bottom:18px;transform:translate(-50%,6px);z-index:2;
     display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#141009;font-weight:700;font-size:14.5px;
     padding:10px 20px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:transform .2s,filter .2s}
-  .shot:hover img,.shot:focus-visible img{transform:scale(1.025)}
+  .shot:hover img.shot-desktop,.shot:focus-visible img.shot-desktop{transform:scale(1.025)}
   .shot:hover .shot-cta,.shot:focus-visible .shot-cta{transform:translate(-50%,0);filter:brightness(1.04)}
 
   .opt-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
@@ -76,15 +77,18 @@
   .phones{margin-top:52px;padding-top:34px;border-top:1px solid var(--line)}
   .phones > .lede{margin-bottom:26px}
   .phone-row{margin-bottom:34px}
-  .phone-row-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  .phone-row-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--muted);flex-wrap:wrap}
+  /* --accent is defined on .opt only, so the row swatches rendered as empty boxes */
+  .phone-row[data-accent="a"]{--accent:var(--gold)}
+  .phone-row[data-accent="b"]{--accent:var(--teal)}
   .phone-row-top .swatch{background:var(--accent)}
   .phone-row-top .name{color:var(--ink)}
-  .phone-row-top .open{margin-left:auto;text-transform:none;letter-spacing:0;font-size:13.5px;color:var(--accent-dark);font-weight:700}
+  .phone-row-top .open{margin-left:auto;text-transform:none;letter-spacing:0;font-size:13.5px;color:var(--accent-dark);font-weight:700;display:inline-flex;align-items:center;min-height:44px}
   .strip{display:flex;gap:20px;overflow-x:auto;padding:4px 2px 12px;min-width:0;scrollbar-width:thin}
   .strip::-webkit-scrollbar{height:8px}
   .strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
   .phone{flex:0 0 auto;width:186px;text-decoration:none;color:inherit}
-  .bezel{position:relative;background:#141009;border-radius:26px;padding:9px;box-shadow:0 10px 26px rgba(31,27,22,.18)}
+  .bezel{position:relative;display:block;background:#141009;border-radius:26px;padding:9px;box-shadow:0 10px 26px rgba(31,27,22,.18)}
   .bezel img{display:block;width:100%;border-radius:19px}
   .notch{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:52px;height:5px;border-radius:99px;background:rgba(255,255,255,.4)}
   .phone .cap{display:block;margin-top:9px;font-size:13px;color:var(--muted);text-align:center}
@@ -95,13 +99,49 @@
 
   footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
   footer b{color:#463f37}
+
+  /* ==========================================================================
+     MOBILE (<=820px)
+     Measured on the previous version: the first design card did not appear until
+     600px down, and its preview was a 1440px-wide desktop screenshot squeezed
+     into a 352x221 box — on a phone that reads as a grey smudge. The preview now
+     shows the PHONE render instead, the intro is tighter, and the phone rows are
+     a 2x2 grid rather than a sideways strip whose third screen was completely
+     hidden with no swipe affordance.
+     ======================================================================== */
   @media (max-width:820px){
-    .options{grid-template-columns:1fr}
-    h1{font-size:29px}
+    .wrap{padding:26px 18px 44px}
+    h1{font-size:27px;margin:8px 0 8px}
     h2{font-size:22px}
-    .wrap{padding:34px 18px 56px}
-    ul.pages{grid-template-columns:1fr}
-    .phone{width:158px}
+    .lede{font-size:15.5px;margin-bottom:16px}
+    .steps{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+    .step-chip{padding:7px 12px;font-size:13px;border-radius:10px;align-items:flex-start;line-height:1.35}
+    .options{grid-template-columns:1fr;gap:20px}
+    ul.pages{grid-template-columns:1fr;gap:0;margin-top:4px}
+    ul.pages li{font-size:14.5px}
+    /* once the disclosure is open these are 9 real links — 16px rows are not thumb targets */
+    ul.pages a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--line)}
+    ul.pages li:last-child a{border-bottom:0}
+
+    /* the card preview: a phone render on a warm panel, nothing cropped away */
+    .shot{background:linear-gradient(180deg,#f7f1e7,#ead9c0);padding:20px 0 0}
+    .shot img.shot-desktop{display:none}
+    .shot img.shot-phone{display:block;width:180px;margin:0 auto;border-radius:22px 22px 0 0;
+      box-shadow:0 14px 34px rgba(20,16,12,.22),0 0 0 7px #141009}
+    .shot::after{display:none}
+    .shot .shot-cta{display:none}
+
+    .member-link img{width:70px;height:129px;object-position:top center}
+    .member-link i{font-size:12.5px}
+    .member-link .go{font-size:13px}
+
+    /* the phone rows: everything visible, no sideways scrolling, no cut-off phone */
+    .strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;overflow:visible;padding:0}
+    .phone{width:100%}
+    .bezel{border-radius:22px;padding:7px}
+    .bezel img{border-radius:16px}
+    .notch{top:12px;width:42px;height:4px}
+    .swipe-hint{display:none}
   }
 </style>
 </head>
@@ -113,7 +153,7 @@
     <h1>Slim Revolution — two website designs</h1>
     <p class="lede">Two complete designs for the new <b>slimrevolution.net</b>. Both are <b>live, working
       websites</b>, not pictures: open one, use the menu, look at the VacuTherm and membership pages, and
-      log into the member area. The <b>mobile versions</b> are further down the page, and the <b>FAQ</b> now has its own page.</p>
+      log into the member area. The <b>phone views</b> are further down, and the <b>FAQ</b> has its own page.</p>
     <div class="steps">
       <span class="step-chip"><i>1</i> Pick a design below</span>
       <span class="step-chip"><i>2</i> Click the picture or the gold/teal button</span>
@@ -127,7 +167,8 @@
     <!-- ================= OPTION A ================= -->
     <article class="opt" data-accent="a">
       <a class="shot" href="option-a-light/index.html" aria-label="Open Option A — the clean and light design">
-        <img src="thumb-option-a.jpg" alt="Option A homepage: warm ivory background, gold accents, editorial layout">
+        <img class="shot-desktop" src="thumb-option-a.jpg" alt="Option A homepage on a desktop: warm ivory background, gold accents, editorial layout">
+        <img class="shot-phone" src="phone-a-home.jpg" alt="Option A homepage on a phone">
         <span class="shot-cta">Open this design →</span>
       </a>
       <div class="opt-body">
@@ -137,7 +178,7 @@
         <a class="btn" href="option-a-light/index.html">Open Option A →</a>
         <div class="member">
           <a class="member-link" href="option-a-light/portal.html">
-            <img src="thumb-option-a-member.jpg" alt="Member area preview for Option A">
+            <img src="phone-a-member.jpg" alt="Option A member area on a phone">
             <span><b>Member area</b><i>5 pages: overview, membership, bookings, progress and settings</i></span>
             <span class="go">Open →</span>
           </a>
@@ -162,7 +203,8 @@
     <!-- ================= OPTION B ================= -->
     <article class="opt" data-accent="b">
       <a class="shot" href="option-b-teal/index.html" aria-label="Open Option B — the design that keeps the brand teal">
-        <img src="thumb-option-b.jpg" alt="Option B homepage: the same layout built around the brand teal colour">
+        <img class="shot-desktop" src="thumb-option-b.jpg" alt="Option B homepage on a desktop: the same layout built around the brand teal colour">
+        <img class="shot-phone" src="phone-b-home.jpg" alt="Option B homepage on a phone">
         <span class="shot-cta">Open this design →</span>
       </a>
       <div class="opt-body">
@@ -172,7 +214,7 @@
         <a class="btn" href="option-b-teal/index.html">Open Option B →</a>
         <div class="member">
           <a class="member-link" href="option-b-teal/portal.html">
-            <img src="thumb-option-b-member.jpg" alt="Member area preview for Option B">
+            <img src="phone-b-member.jpg" alt="Option B member area on a phone">
             <span><b>Member area</b><i>5 pages: overview, membership, bookings, progress and settings</i></span>
             <span class="go">Open →</span>
           </a>
@@ -196,12 +238,11 @@
 
   </main>
 
-  <!-- ================= MOBILE ================= -->
+  <!-- ================= PHONE VIEWS ================= -->
   <section class="phones">
     <h2>On a phone — where most visitors will be</h2>
-    <p class="lede">These are the same live pages, captured at <b>390px</b> (a standard phone width). Tap any
-      screen to open that page — on your own phone it fills the whole screen. The first screen shows the
-      mobile menu you get from the burger button.</p>
+    <p class="lede">Four real screens per design, captured at <b>390px</b> (a standard phone width). Tap any
+      screen to open that page — on your own phone it fills the whole screen.</p>
 
     <div class="phone-row" data-accent="a">
       <div class="phone-row-top">
@@ -211,8 +252,12 @@
       </div>
       <div class="strip">
         <a class="phone" href="option-a-light/index.html">
-          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-a-home.jpg" alt="Option A homepage on a phone, with the mobile menu open"></span>
-          <span class="cap"><b>Home</b>with the mobile menu open</span>
+          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-a-home.jpg" alt="Option A homepage on a phone"></span>
+          <span class="cap"><b>Home</b>hero and booking</span>
+        </a>
+        <a class="phone" href="option-a-light/index.html">
+          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-a-menu.jpg" alt="Option A mobile menu open on a phone"></span>
+          <span class="cap"><b>Menu</b>the burger menu</span>
         </a>
         <a class="phone" href="option-a-light/portal.html">
           <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-a-member.jpg" alt="Option A member area on a phone"></span>
@@ -233,8 +278,12 @@
       </div>
       <div class="strip">
         <a class="phone" href="option-b-teal/index.html">
-          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-b-home.jpg" alt="Option B homepage on a phone, with the mobile menu open"></span>
-          <span class="cap"><b>Home</b>with the mobile menu open</span>
+          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-b-home.jpg" alt="Option B homepage on a phone"></span>
+          <span class="cap"><b>Home</b>hero and booking</span>
+        </a>
+        <a class="phone" href="option-b-teal/index.html">
+          <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-b-menu.jpg" alt="Option B mobile menu open on a phone"></span>
+          <span class="cap"><b>Menu</b>the burger menu</span>
         </a>
         <a class="phone" href="option-b-teal/portal.html">
           <span class="bezel"><span class="notch" aria-hidden="true"></span><img src="phone-b-member.jpg" alt="Option B member area on a phone"></span>
@@ -247,7 +296,7 @@
       </div>
     </div>
 
-    <p class="swipe-hint">On a narrow screen you can scroll each row sideways to see all three screens.</p>
+    <p class="swipe-hint">On a narrow screen you can scroll each row sideways to see all four screens.</p>
   </section>
 
   <footer>
